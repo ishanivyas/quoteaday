@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Welcome to Learning NODE.JS</title>
 </head>
-
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 <body>
-My first application:
-<div>
-<%quote%>
+My first application (without using EJS) :
+
+<div id="quote">
+
 </div>
 </body>
 <script>
@@ -21,6 +22,10 @@ My first application:
     var randomNumber = Math.floor(Math.random()*4+1);
 
     document.getElementById("quote").innerHTML = arr[randomNumber-1];*/
-
+$(document).ready(function () {
+     $.get("/getQuote",function(data)  {
+         $("#quote").text(data.msg);
+     });
+});
 </script>
 </html>

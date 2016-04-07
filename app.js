@@ -13,10 +13,14 @@ var quotes = [ "The best preparation for tomorrow is doing your best today.",
 var show_quotes = quotes[Math.floor(Math.random() * quotes.length)];
 
 
+//app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/'));
+
 /** get corresponds to http method */
-app.get("/",function (req,res) {
-    res.render('index',{quote: show_quotes});
-    res.sendFile(__dirname+"/index.html");
+
+app.get("/getQuote",function (req,res) {
+    res.json({ msg:show_quotes });
+//    res.sendFile(__dirname+"/index.html");
 });
 
 app.get("/weather",function (req,res) {
@@ -26,5 +30,5 @@ app.get("/weather",function (req,res) {
 var port = process.env.PORT || 8080;
 
 app.listen(port,function() {
-    console.log("Application is listenning on"+port);
+    console.log("Application is listenning on...."+show_quotes);
 });
