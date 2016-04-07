@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Learning NODE.JS</title>
+</head>
+
+
+<body>
+My first application:
+<div id="quote">
+
+</div>
+</body>
+<script>
+    var arr = [ "Test1",
+        "Test2",
+        "Test3",
+        "Test4"];
+
+    var randomNumber = Math.floor(Math.random()*4+1);
+
+    document.getElementById("quote").innerHTML = arr[randomNumber-1];
+
+</script>
+</html>
