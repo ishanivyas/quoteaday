@@ -16,6 +16,6 @@ app.get("/weather",function (req,res) {
 
 var port = process.env.PORT || 8080;
 
-app.listen(3000,function() {
+app.listen(port,function() {
     console.log("Application is listenning on"+port);
 });
