@@ -14,7 +14,7 @@ app.get("/weather",function (req,res) {
     res.sendFile(__dirname+"/weather.html");
 });
 
-var port = 3000;
+var port = process.env.PORT || 8080;
 
 app.listen(3000,function() {
     console.log("Application is listenning on"+port);
